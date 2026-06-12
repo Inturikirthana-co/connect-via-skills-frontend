@@ -20,9 +20,7 @@ function Profile() {
 
   const [previewImage, setPreviewImage] = useState("");
 
-  const user = JSON.parse(
-    localStorage.getItem("user")
-  );
+  const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
 
@@ -45,9 +43,8 @@ function Profile() {
 
         if (res.data.profile_pic) {
 
-          setPreviewImage(
-            `http://localhost:5000/uploads/${res.data.profile_pic}`
-          );
+          // Cloudinary URL
+          setPreviewImage(res.data.profile_pic);
 
         }
 
@@ -81,9 +78,7 @@ function Profile() {
 
     if (file) {
 
-      setPreviewImage(
-        URL.createObjectURL(file)
-      );
+      setPreviewImage(URL.createObjectURL(file));
 
     }
 
@@ -108,47 +103,24 @@ function Profile() {
       formData.append("education", profile.education);
       formData.append("college", profile.college);
       formData.append("degree", profile.degree);
-      formData.append(
-        "graduation_year",
-        profile.graduation_year
-      );
-      formData.append(
-        "experience",
-        profile.experience
-      );
-      formData.append(
-        "current_role",
-        profile.current_role
-      );
-      formData.append(
-        "linkedin",
-        profile.linkedin
-      );
-      formData.append(
-        "github",
-        profile.github
-      );
-      formData.append(
-        "portfolio",
-        profile.portfolio
-      );
+      formData.append("graduation_year", profile.graduation_year);
+      formData.append("experience", profile.experience);
+      formData.append("current_role", profile.current_role);
+      formData.append("linkedin", profile.linkedin);
+      formData.append("github", profile.github);
+      formData.append("portfolio", profile.portfolio);
 
-      await API.post(
-        "/profile/save",
-        formData
-      );
+      await API.post("/profile/save", formData);
 
-      toast.success(
-        "Profile Saved Successfully"
-      );
+      toast.success("Profile Saved Successfully");
+
+      fetchProfile();
 
     } catch (err) {
 
       console.error(err);
 
-      toast.error(
-        "Failed To Save Profile"
-      );
+      toast.error("Failed To Save Profile");
 
     }
 
@@ -218,11 +190,7 @@ function Profile() {
 
         {/* BODY */}
 
-        <div
-          style={{
-            padding: "40px"
-          }}
-        >
+        <div style={{ padding: "40px" }}>
 
           <h3>About Me</h3>
 
