@@ -1,0 +1,112 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color:white;
+  min-height:100vh;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.page-container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:30px;
+  width:100%;
+  max-width:500px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+.title{
+  font-size:2.5rem;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.input{
+  width:100%;
+  padding:14px;
+  border:none;
+  outline:none;
+  border-radius:12px;
+  margin-bottom:15px;
+  background:rgba(255,255,255,0.08);
+  color:white;
+}
+
+.input::placeholder{
+  color:#bdbdbd;
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.dashboard-container{
+  max-width:1200px;
+  margin:auto;
+  padding:30px;
+}
+
+.section-title{
+  font-size:2rem;
+  margin-bottom:25px;
+}
+
+.glass-card{
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(12px);
+}
+
+.status-accepted{
+  color:#22c55e;
+  font-weight:700;
+}
+
+.status-pending{
+  color:#f59e0b;
+  font-weight:700;
+}
+
+.status-rejected{
+  color:#ef4444;
+  font-weight:700;
+}
